@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/** Grid menu xml
+ * @category  Webkul
+ * @package   Webkul_Grid
+ * @author    Webkul
+ * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mageplaza_HelloWorld::manager" title="Grid Manager" module="Mageplaza_HelloWorld" sortOrder="10" resource="Mageplaza_HelloWorld::manager" />
+        <add id="Mageplaza_HelloWorld::add_row" title="Grid Manager" module="Mageplaza_HelloWorld" sortOrder="20" parent="Mageplaza_HelloWorld::manager" action="grid/grid" resource="Mageplaza_HelloWorld::add_row"/>
+    </menu>
+</config>

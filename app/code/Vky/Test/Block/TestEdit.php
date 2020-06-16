@@ -1,0 +1,33 @@
+<?php
+namespace Vky\Test\Block;
+
+use Magento\Framework\View\Element\Template\Context;
+use Vky\Test\Model\TestFactory;
+/**
+ * Test View block
+ */
+class TestEdit extends \Magento\Framework\View\Element\Template
+{
+    public function __construct(
+        Context $context,
+        TestFactory $test
+    ) {
+        $this->_test = $test;
+        parent::__construct($context);
+    }
+
+    public function _prepareLayout()
+    {
+        $this->pageConfig->getTitle()->set(__('Simple Custom Module Edit Page'));
+
+        return parent::_prepareLayout();
+    }
+
+    public function getSingleData()
+    {
+        $id = $this->getRequest()->getParam('id');
+        $test = $this->_test->create();
+        $singleData = $test->load($id);
+        return $singleData;
+    }
+}
